@@ -16,9 +16,9 @@ public class DateOfBirthActivity extends AppCompatActivity {
       Spinner monthsSp;
       Spinner yearsSp;
       Button submitBtn;
-      public String[] dates = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
-      public  String[] months = {"01","02","03","04","05","06","07","08","09","10","11","12"};
-      public String[] years = {"2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"};
+      public String[] dates = {"select","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"};
+      public  String[] months = {"select","January","February","March","April","May","June","July","August","September","October","November","December"};
+      public String[] years = {"Select","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"};
       ArrayAdapter dateAdapter;
       ArrayAdapter monthAdapter;
       ArrayAdapter yearAdapter;
@@ -27,12 +27,9 @@ public class DateOfBirthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_of_birth);
         initViews();
-        setDateAdapter();
-        connectDateAdapter();
-        setMonthAdapter();
-        connectMonthAdapter();
-        setYearAdapter();
-        connectYearAdapter();
+        setAdapter();
+        connectAdapter();
+
     }
 
     private void initViews() {
@@ -45,28 +42,16 @@ public class DateOfBirthActivity extends AppCompatActivity {
         yearsSp = findViewById(R.id.years_sp);
     }
 
-    public  void  setDateAdapter(){
+    public  void setAdapter(){
         dateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,dates);
-    }
-
-    public  void  connectDateAdapter(){
-        datesSp.setAdapter(dateAdapter);
-
-    }
-
-    public  void setMonthAdapter(){
         monthAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,months);
-    }
-
-    public void  connectMonthAdapter(){
-        monthsSp.setAdapter(monthAdapter);
-    }
-
-    public  void setYearAdapter(){
         yearAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item,years);
     }
 
-    public  void connectYearAdapter(){
+    public  void connectAdapter(){
+        datesSp.setAdapter(dateAdapter);
+        monthsSp.setAdapter(monthAdapter);
         yearsSp.setAdapter(yearAdapter);
+
     }
 }

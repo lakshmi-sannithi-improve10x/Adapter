@@ -13,7 +13,7 @@ public class LuckyNumberActivity extends AppCompatActivity {
     Spinner numbersSp;
     Button submitBtn;
     ArrayAdapter adapter;
-   public String[] numbers = {"1","2","3","4","5","6","7","8","9","10"};
+   public String[] numbers = {"select","1","2","3","4","5","6","7","8","9","10"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

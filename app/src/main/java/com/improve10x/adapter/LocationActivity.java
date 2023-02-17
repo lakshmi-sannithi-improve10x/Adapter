@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class LocationActivity extends AppCompatActivity {
     TextView statesTxt;
     Spinner statesSp;
-    public String[] states = {"Arunachal Pradesh","Assam","Bihar","Chhattisgarh"};
+    public String[] states = {"select","Arunachal Pradesh","Assam","Bihar","Chhattisgarh"};
     ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
